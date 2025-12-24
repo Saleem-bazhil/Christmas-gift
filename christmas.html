@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas! Special Gift</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Animated Snow Background -->
+        <div class="snow-container" id="snowContainer"></div>
+
+        <!-- SCREEN 1: Landing with Gift -->
+        <div id="screen1" class="screen active">
+            <div class="title-container">
+                <h1>For My Special Someone</h1>
+                <div class="subtitle">A magical Christmas experience just for you</div>
+            </div>
+
+            <div class="gift-box-container" onclick="nextScreen(2)">
+                <div class="tap-me-badge">Tap to Open Gift!</div>
+                <div class="gift-emoji">🎁</div>
+            </div>
+
+            <div class="subtitle" style="position: absolute; bottom: 30px; font-size: 0.9rem;">
+                Made with ❤️ for Christmas
+            </div>
+        </div>
+
+        <!-- SCREEN 2: Snowman -->
+        <div id="screen2" class="screen">
+            <div class="snowman-container">
+                <img src="https://cdn-icons-png.flaticon.com/512/2663/2663114.png" alt="Snowman" class="snowman-img">
+                <div class="sparkles" id="sparklesContainer"></div>
+            </div>
+
+            <h2 style="margin-bottom: 10px;">This Christmas,</h2>
+            <p class="subtitle">something magical awaits you. A little surprise to brighten your holiday.</p>
+            <button onclick="nextScreen(3)">Open Your Surprise</button>
+        </div>
+
+        <!-- SCREEN 3: Card Reveal -->
+        <div id="screen3" class="screen">
+            <h1>Just For You</h1>
+            <p class="subtitle">I don't need any other gift because...</p>
+
+            <div class="card-grid">
+                <div class="card" onclick="revealCard(this)">
+                    <span class="text">You</span>
+                    <div class="cover"><span class="heart-icon">♥</span></div>
+                </div>
+                <div class="card" onclick="revealCard(this)">
+                    <span class="text">are</span>
+                    <div class="cover"><span class="heart-icon">♥</span></div>
+                </div>
+                <div class="card" onclick="revealCard(this)">
+                    <span class="text">my</span>
+                    <div class="cover"><span class="heart-icon">♥</span></div>
+                </div>
+                <div class="card" onclick="revealCard(this)">
+                    <span class="text">cutest</span>
+                    <div class="cover"><span class="heart-icon">♥</span></div>
+                </div>
+                <div class="card" onclick="revealCard(this)">
+                    <span class="text">gift</span>
+                    <div class="cover"><span class="heart-icon">♥</span></div>
+                </div>
+            </div>
+            <button id="finishCardsBtn" onclick="nextScreen(4)">Continue <i class="fas fa-arrow-right"></i></button>
+        </div>
+
+        <!-- SCREEN 4: Letter -->
+        <div id="screen4" class="screen">
+            <h1>Merry Christmas<br>My Cutiepie</h1>
+
+            <div class="santa-container">
+                <div class="tap-me-badge" style="top: -15px;">Tap Santa to read letter</div>
+                <img src="https://cdn-icons-png.flaticon.com/512/3799/3799988.png" alt="Santa" class="santa-img"
+                    onclick="openLetter()">
+            </div>
+
+            <p class="subtitle">Wishing you love, joy, and magical moments this Christmas</p>
+
+            <div class="letter-modal" id="letterModal">
+                <div class="letter-header">
+                    <h2>My Dearest,</h2>
+                    <button class="close-btn" onclick="closeLetter()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="letter-text">
+                    <p>This Christmas, I just want you to know how incredibly special you are to me. You've brought so
+                        much light and joy into my life, and I'm endlessly grateful for you.</p>
+
+                    <p>You are not just a part of my life, you are the reason behind so many smiles and little moments
+                        that make every day magical. Your laughter is my favorite sound, and your happiness is my
+                        greatest wish.</p>
+
+                    <p>I may not be perfect, but I promise one thing: whenever you share a wish, a dream, or even a
+                        silly thought, I'll always try my best to be there for you, to listen, and to support you in
+                        every way I can.</p>
+
+                    <p>Thank you for being you - kind, wonderful, and utterly amazing. My life is brighter with you in
+                        it.</p>
+
+                    <p>Wishing you a Christmas filled with love, warmth, and all the happiness you deserve.</p>
+                </div>
+                <div class="signature">With all my love ❤️</div>
+                <button onclick="closeLetter()" style="margin-top: 20px;">Close Letter</button>
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>
+
+</body>
+
+</html>
